@@ -1,0 +1,50 @@
+/* Basic responsive styles for Math Interactive Quiz */
+:root{
+  --bg:#f6f8fb;
+  --card:#ffffff;
+  --accent:#3b82f6;
+  --muted:#6b7280;
+  --correct:#16a34a;
+  --wrong:#ef4444;
+  --radius:10px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:linear-gradient(180deg,#eef2ff 0%,var(--bg) 100%);
+  color:#111827;
+  -webkit-font-smoothing:antialiased;
+}
+.app-header{padding:28px 20px;text-align:center}
+.app-header h1{margin:0;font-size:1.6rem}
+.subtitle{margin:6px 0 0;color:var(--muted)}
+
+.app{display:grid;grid-template-columns:1fr 260px;gap:20px;padding:20px;max-width:980px;margin:0 auto}
+.quiz-card{background:var(--card);border-radius:var(--radius);padding:20px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+.quiz-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.progress,.score{font-weight:600;color:var(--muted)}
+.question-area{padding:10px 0}
+.question{font-size:1.2rem;margin-bottom:12px}
+.choices{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.choice{display:block}
+.choice-btn{width:100%;text-align:left;padding:12px 14px;border-radius:8px;border:1px solid #e6e9ef;background:#fff;cursor:pointer;font-size:1rem}
+.choice-btn:hover{transform:translateY(-1px)}
+.choice-btn[aria-pressed="true"]{outline:2px solid var(--accent)}
+.choice-btn.correct{background:rgba(16,185,129,0.08);border-color:rgba(16,185,129,0.2);}
+.choice-btn.wrong{background:rgba(239,68,68,0.08);border-color:rgba(239,68,68,0.2);}
+.controls{display:flex;gap:8px;margin-top:14px}
+.btn{padding:10px 14px;border-radius:8px;background:var(--accent);color:#fff;border:none;cursor:pointer}
+.btn.secondary{background:#f3f4f6;color:#111}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.sidebar{background:var(--card);border-radius:var(--radius);padding:16px;height:fit-content;box-shadow:0 6px 12px rgba(2,6,23,0.04)}
+.sidebar h3{margin-top:0}
+label{display:block;margin:8px 0;color:var(--muted)}
+.high-score{margin-top:16px}
+#highScore{font-weight:700;font-size:1.1rem}
+
+@media(max-width:880px){
+  .app{grid-template-columns:1fr;}
+  .sidebar{order:2}
+}

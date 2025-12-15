@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Math Interactive Quiz</title>
+  <link rel="stylesheet" href="/src/styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>Math Interactive Quiz</h1>
+    <p class="subtitle">Practice arithmetic with immediate feedback and track your score.</p>
+  </header>
+
+  <main class="app">
+    <section class="quiz-card" id="quiz">
+      <div class="quiz-top">
+        <div id="progress" class="progress">Question <span id="current">0</span> / <span id="total">0</span></div>
+        <div id="score" class="score">Score: <span id="scoreVal">0</span></div>
+      </div>
+
+      <div id="question-area" class="question-area">
+        <div id="question" class="question">Loading questions...</div>
+        <ul id="choices" class="choices" role="list"></ul>
+      </div>
+
+      <div class="controls">
+        <button id="nextBtn" class="btn" disabled>Next</button>
+        <button id="restartBtn" class="btn secondary" hidden>Restart</button>
+      </div>
+    </section>
+
+    <aside class="sidebar">
+      <h3>Settings</h3>
+      <label><input type="checkbox" id="shuffleQ"> Shuffle questions</label>
+      <label><input type="checkbox" id="shuffleA" checked> Shuffle answers</label>
+
+      <div class="high-score">
+        <h4>High score</h4>
+        <div id="highScore">—</div>
+      </div>
+    </aside>
+  </main>
+
+  <template id="choice-template">
+    <li class="choice"><button class="choice-btn"></button></li>
+  </template>
+
+  <script src="/src/app.js" type="module"></script>
+</body>
+</html>
